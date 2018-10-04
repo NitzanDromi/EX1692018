@@ -29,30 +29,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void go2 (View v){
-        if ((!etfirst.getText().toString().equals(""))&&(!etfirst.getText().toString().equals(".-"))&&((!etfirst.getText().toString().equals("."))&&(!etfirst.getText().toString().equals("-"))&&(!etfirst.getText().toString().equals("-.")))||
-        ((!etdm.getText().toString().equals("")) &&(!etdm.getText().toString().equals(".-"))&&((!etdm.getText().toString().equals("."))&&(!etdm.getText().toString().equals("-"))&&(!etdm.getText().toString().equals("-."))||(type==500)))){
-            String st = etfirst.getText().toString();
-            first=Double.parseDouble(st);
-            st = etdm.getText().toString();
-            dom=Double.parseDouble(st);
-            Intent t = new Intent(this, SecondActivity.class);
-            t.putExtra("type", type);
-            t.putExtra("first", first);
-            t.putExtra("dom", dom);
-            startActivity (t);
-            if(rbhe.isChecked())
-                type=1;
-            else {
-                if (rbha.isChecked())
-                    type = 0;
-                else  Toast.makeText(this, "You need to finish in order to continue", Toast.LENGTH_LONG).show();
-
-            }
+        if ((etfirst.getText().toString().equals(""))||(etfirst.getText().toString().equals(".-"))||((etfirst.getText().toString().equals("."))||(etfirst.getText().toString().equals("-"))||(etfirst.getText().toString().equals("-.")))||
+        ((etdm.getText().toString().equals("")) ||(etdm.getText().toString().equals(".-"))||((etdm.getText().toString().equals("."))||(etdm.getText().toString().equals("-"))||(etdm.getText().toString().equals("-."))))){
+            Toast.makeText(this, "Input is unavailable", Toast.LENGTH_SHORT).show();
         }
         else {
+            String st = etfirst.getText().toString();
+            first=Double.parseDouble(st);
+            String st2 = etdm.getText().toString();
+            dom=Double.parseDouble(st2);
 
-            Toast.makeText(this, "Input is unavailable", Toast.LENGTH_SHORT).show();
-
+            if ((!rbhe.isChecked())&&(!rbha.isChecked()))
+                Toast.makeText(this, "You need to finish in order to continue", Toast.LENGTH_LONG).show();
+            else{
+                if(rbhe.isChecked())
+                    type = 1;
+                else {
+                        type = 0;
+                }
+            }
+            Intent t = new Intent(this, SecondActivity.class);
+            t.putExtra("first", first);
+            t.putExtra("type", type);
+            t.putExtra("dom", dom);
+            startActivity(t);
         }
     }
 
