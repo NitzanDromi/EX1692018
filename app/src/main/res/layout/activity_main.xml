@@ -158,7 +158,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.25"
             app:srcCompat="@drawable/credits"
-            android:onClick="gocreds"/>
+            android:onClick="gocreds"
+            android:background="#FFFFFF"
+            />
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"

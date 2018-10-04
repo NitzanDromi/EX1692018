@@ -1,8 +1,6 @@
 package com.example.user.ex1692018;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +22,7 @@ public abstract class SecondActivity extends AppCompatActivity implements Adapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sacond);
+        setContentView(R.layout.activity_second);
         tvX= (TextView)findViewById(R.id.tvx);
         tvN=(TextView)findViewById(R.id.tvn);
         tvD=(TextView)findViewById(R.id.tvd);
@@ -57,20 +55,18 @@ public abstract class SecondActivity extends AppCompatActivity implements Adapte
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         int n=i+1;
-        tvN.setText(Double.toString(n)); double sum;
+        tvN.setText(Integer.toString(n)); double sum;
         if (type1==1)
             sum=((n*((2*first1)+dom1*(n-1)))/2);
         else{ if (dom1!=1)
             sum=((first1*(Math.pow(dom1,n))-1))/(dom1-1);
-            else sum=first1*n;
+        else sum=first1*n;
         }
         tvS.setText(Double.toString(sum));
     }
 
     public void go1(View view) {
-        Intent t=new Intent(this, MainActivity.class);
+        Intent t = new Intent(this, MainActivity.class);
         startActivity(t);
     }
-
-}
-
+    }
