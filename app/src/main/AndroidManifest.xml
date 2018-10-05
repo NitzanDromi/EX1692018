@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.ex1692018">
 
-    <uses-sdk
-        android:maxSdkVersion="27" />
+    <uses-sdk android:maxSdkVersion="27" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -24,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CredsActivity" />
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".SecActivity"></activity>
     </application>
 
 </manifest>

@@ -9,7 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public abstract class SecondActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class SecActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
     int x; double y;
     Intent r;
     TextView tvX, tvN, tvD, tvS;
@@ -58,9 +59,13 @@ public abstract class SecondActivity extends AppCompatActivity implements Adapte
         tvN.setText(Integer.toString(n)); double sum;
         if (type1==1)
             sum=((n*((2*first1)+dom1*(n-1)))/2);
-        else{ if (dom1!=1)
-            sum=((first1*(Math.pow(dom1,n))-1))/(dom1-1);
-        else sum=first1*n;
+        else{ if ((first1!=0)||(dom1!=0)||(dom1!=1))
+            sum=(first1*(Math.pow(dom1,n)-1))/(dom1-1);
+        else {
+            if ((first1 == 0) || (dom1 == 0))
+                sum = 0;
+            else sum = Double.parseDouble(series[n]);
+        }
         }
         tvS.setText(Double.toString(sum));
     }
@@ -69,4 +74,4 @@ public abstract class SecondActivity extends AppCompatActivity implements Adapte
         Intent t = new Intent(this, MainActivity.class);
         startActivity(t);
     }
-    }
+}

@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         type = 0;
                 }
             }
-            Intent t = new Intent(this, SecondActivity.class);
+            Intent t = new Intent(this, SecActivity.class);
             t.putExtra("first", first);
             t.putExtra("type", type);
             t.putExtra("dom", dom);
