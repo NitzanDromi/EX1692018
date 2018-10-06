@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:layout_gravity="center"
-    tools:context=".SecondActivity">
+    tools:context=".SecActivity">
 
     <Space
         android:layout_width="0dp"
